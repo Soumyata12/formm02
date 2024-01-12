@@ -1,8 +1,36 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import firebase from './firebase';
+
+
+
+
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+
+//new
+
+
+const serviceAccount = require('./firebase.js');
+
+
+
+
+
+const fileUploadApp = require('./FileUpload');
+const port = 5000;
+
+fileUploadApp.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
